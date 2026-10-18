@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --pink: #ff78ad;
+  --deep-pink: #d9367b;
+  --pale-pink: #fff0f6;
+  --text: #66344c;
+  --muted: #946b7e;
+  --white: #fffdfd;
+}
+
+* { box-sizing: border-box; }
+
+html { min-height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255,255,255,.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 85% 25%, rgba(255,255,255,.8) 0 3px, transparent 4px),
+    linear-gradient(145deg, #ffeaf3 0%, #ffd7e8 48%, #fff0f6 100%);
+  overflow-x: hidden;
+}
+
+button { font: inherit; }
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.birthday-card {
+  width: min(100%, 520px);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 6vw, 42px) clamp(18px, 5vw, 38px) 24px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 30px;
+  background: rgba(255,253,253,.88);
+  box-shadow: 0 24px 70px rgba(180, 66, 119, .17);
+  backdrop-filter: blur(10px);
+  animation: cardEnter .8s ease both;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--deep-pink);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.cake {
+  font-size: clamp(3.2rem, 12vw, 4.4rem);
+  margin: 8px 0 4px;
+  filter: drop-shadow(0 7px 9px rgba(217,54,123,.13));
+  animation: cakeBounce 2.4s ease-in-out infinite;
+}
+
+h1 {
+  margin: 8px 0 12px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.35rem, 10vw, 3.6rem);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+h1 span { color: var(--deep-pink); }
+
+.intro {
+  max-width: 350px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: .98rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 23px 0;
+  color: var(--pink);
+}
+.divider::before, .divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #f8c4d9;
+}
+.divider span { font-size: 1.2rem; }
+
+.primary-button, .surprise-button {
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 18px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.primary-button {
+  background: linear-gradient(135deg, #ff83b5, #e94f91);
+  box-shadow: 0 10px 22px rgba(233,79,145,.23);
+}
+.surprise-button {
+  margin-top: 12px;
+  color: var(--deep-pink);
+  background: #fff0f6;
+  border: 1px solid #ffc9df;
+}
+.primary-button:hover, .surprise-button:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.06);
+}
+.primary-button:active, .surprise-button:active { transform: scale(.98); }
+button:focus-visible { outline: 3px solid #b92b70; outline-offset: 3px; }
+
+.letter, .surprise {
+  margin-top: 20px;
+  padding: 22px 19px;
+  text-align: left;
+  border: 1px solid #ffd3e4;
+  border-radius: 20px;
+  background: linear-gradient(150deg, #fff8fb, #fff0f6);
+  animation: reveal .45s ease both;
+}
+.letter h2, .surprise h2 {
+  margin: 0 0 14px;
+  text-align: center;
+  color: var(--deep-pink);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+}
+.letter p, .surprise p {
+  font-size: .94rem;
+  line-height: 1.8;
+  margin: 0 0 12px;
+}
+.letter .signoff { margin-top: 18px; margin-bottom: 0; }
+.surprise { text-align: center; }
+.surprise-emoji { font-size: 2rem; margin-bottom: 8px; }
+.surprise .tiny-note { margin: 12px 0 0; color: var(--muted); font-size: .8rem; }
+
+.footer-note {
+  margin: 24px 0 0;
+  color: #b17b94;
+  font-size: .78rem;
+  letter-spacing: .3px;
+}
+
+.hidden { display: none !important; }
+
+.sparkle {
+  position: absolute;
+  color: #ff9bc2;
+  font-size: 1.7rem;
+  pointer-events: none;
+}
+.sparkle-one { top: 28px; left: 25px; }
+.sparkle-two { top: 65px; right: 25px; font-size: 1.35rem; }
+
+.heart-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.floating-heart {
+  position: absolute;
+  bottom: -50px;
+  opacity: 0;
+  color: #f36ca5;
+  user-select: none;
+  animation: floatUp linear forwards;
+  filter: drop-shadow(0 3px 5px rgba(217,54,123,.12));
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg) scale(.7); opacity: 0; }
+  12% { opacity: .65; }
+  85% { opacity: .55; }
+  100% { transform: translateY(-115vh) rotate(28deg) scale(1.2); opacity: 0; }
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(14px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes cakeBounce {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+@media (max-width: 380px) {
+  .birthday-card { border-radius: 24px; padding-inline: 16px; }
+  .letter, .surprise { padding: 18px 15px; }
+  .letter p, .surprise p { font-size: .9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+/* Funny luxury birthday gifts */
+.gifts-section{margin-top:30px;padding-top:25px;border-top:1px dashed #f4b8d1}.gift-heading{margin:7px 0 8px;font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,7vw,2.2rem);color:var(--deep-pink)}.gift-intro{margin:0 auto 18px;max-width:330px;color:var(--muted);font-size:.9rem;line-height:1.6}.gift-grid{display:grid;grid-template-columns:1fr;gap:14px}.gift-card{min-width:0;padding:17px;text-align:center;border:1px solid #ffd0e2;border-radius:22px;background:linear-gradient(150deg,#fffafd,#ffedf5);box-shadow:0 8px 20px rgba(180,66,119,.07)}.gift-art{display:grid;place-items:center;min-height:118px;margin-bottom:12px;border-radius:16px;font-size:4rem}.car-art{background:linear-gradient(135deg,#ffe1ec,#ffc1d9)}.house-art{background:linear-gradient(135deg,#fff0d7,#ffd7e8)}.gift-label{margin:0 0 6px;color:#c14b81;font-size:.65rem;font-weight:700;letter-spacing:1.2px}.gift-card h3{margin:5px 0 8px;color:#73344f;font-family:'Playfair Display',Georgia,serif;font-size:1.35rem}.gift-description{min-height:44px;margin:0 0 14px;color:var(--muted);font-size:.86rem;line-height:1.6}.gift-button{width:100%;border:0;border-radius:999px;padding:13px 12px;color:white;background:linear-gradient(135deg,#d9367b,#fa83b4);box-shadow:0 7px 16px rgba(217,54,123,.18);font-weight:700;cursor:pointer;transition:transform .2s ease}.gift-button:active{transform:scale(.98)}.gift-button:focus-visible{outline:3px solid #b92b70;outline-offset:3px}.gift-reveal{margin:14px 0 0;padding:12px;border-radius:14px;color:#82395a;background:white;border:1px dashed #f2a8c8;font-size:.88rem;line-height:1.7;animation:reveal .4s ease both}.gift-disclaimer{margin:15px 5px 0;color:#a86b87;font-size:.76rem;line-height:1.5}@media(min-width:460px){.gift-grid{grid-template-columns:1fr 1fr}.gift-card{padding:13px}.gift-art{min-height:105px;font-size:3.5rem}}

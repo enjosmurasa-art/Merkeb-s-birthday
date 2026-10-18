@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe4ef">
+  <meta name="description" content="A little birthday surprise made with love for Merkeb.">
+  <title>Happy Birthday, Merkeb! 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="heart-layer" id="heartLayer" aria-hidden="true"></div>
+
+  <main class="page">
+    <section class="birthday-card" aria-labelledby="birthdayTitle">
+      <div class="sparkle sparkle-one" aria-hidden="true">✦</div>
+      <div class="sparkle sparkle-two" aria-hidden="true">✧</div>
+
+      <p class="eyebrow">A little something just for you</p>
+      <div class="cake" aria-hidden="true">🎂</div>
+      <h1 id="birthdayTitle">Happy Birthday,<br><span>Merkeb!</span></h1>
+      <p class="intro">Today is all about celebrating the wonderful person you are. 💗</p>
+
+      <div class="divider"><span>♡</span></div>
+
+      <button class="primary-button" id="letterButton" type="button">
+        Open your birthday letter 💌
+      </button>
+
+      <article class="letter hidden" id="letter" aria-live="polite">
+        <h2>To my Buka, Merkeb 💕</h2>
+        <p>Happy birthday to one of the sweetest people in my life! 🥹💗</p>
+        <p>I hope this new chapter brings you genuine happiness, beautiful memories, new opportunities, and a thousand little reasons to smile. You deserve kindness, peace, love, and all the good things life has to offer.</p>
+        <p>Thank you for being you. Never forget how special you are, and never stop being the amazing person you are becoming. May your wishes come closer and your days be filled with laughter.</p>
+        <p>Even when life gets busy, I hope you always remember that you have someone cheering for you. Today, I hope you feel extra loved and celebrated.</p>
+        <p class="signoff">With lots of love,<br><strong>Your Buka 🫶🏽</strong></p>
+      </article>
+
+      <button class="surprise-button" id="surpriseButton" type="button">
+        Tap for one more surprise 🎁
+      </button>
+
+      <div class="surprise hidden" id="surprise" aria-live="polite">
+        <div class="surprise-emoji" aria-hidden="true">💖✨🌷</div>
+        <h2>A little reminder</h2>
+        <p>Merkeb, you make the world a little brighter just by being yourself. Keep smiling, keep dreaming, and never forget how loved you are. Happy birthday, Buka! 💗</p>
+        <p class="tiny-note">This little corner of the internet was made especially for you.</p>
+      </div>
+
+
+      <section class="gifts-section" aria-labelledby="giftTitle">
+        <p class="eyebrow">Your totally real birthday presents 😂</p>
+        <h2 id="giftTitle" class="gift-heading">Buka's Luxury Gifts 💎</h2>
+        <p class="gift-intro">Because ordinary gifts are too ordinary for you, Merkeb. 😌</p>
+        <div class="gift-grid">
+          <article class="gift-card">
+            <div class="gift-art car-art" role="img" aria-label="Sports car emoji illustration">🏎️</div>
+            <p class="gift-label">GIFT #1 · DREAM GARAGE</p>
+            <h3>Your Lamborghini</h3>
+            <p class="gift-description">One shiny supercar, reserved for the birthday queen herself.</p>
+            <button class="gift-button" type="button" data-gift="car">Claim my Lamborghini 🚗</button>
+            <p class="gift-reveal hidden" id="carReveal" aria-live="polite">Surprise! 😂 The car is currently parked inside Buka's imagination. Fuel not included. 💸</p>
+          </article>
+          <article class="gift-card">
+            <div class="gift-art house-art" role="img" aria-label="Villa emoji illustration">🏡</div>
+            <p class="gift-label">GIFT #2 · VIP REAL ESTATE</p>
+            <h3>Your G+3 Villa</h3>
+            <p class="gift-description">Four levels of luxury, a dream garden, and a very important owner: YOU.</p>
+            <button class="gift-button" type="button" data-gift="villa">Claim my villa 🏡</button>
+            <p class="gift-reveal hidden" id="villaReveal" aria-live="polite">Plot twist! 😭 The villa is built with 100% imagination and 0% birr. Keys coming never. 😂🔑</p>
+          </article>
+        </div>
+        <p class="gift-disclaimer">⚠️ Birthday joke alert: these luxury gifts are imaginary, but the love is real. 💗</p>
+      </section>
+
+      <p class="footer-note">Made with love, just for Merkeb ♡</p>
+    </section>
+  </main>
+
+  <script src="./script.js?v=2" defer></script>
+</body>
+</html>
